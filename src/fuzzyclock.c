@@ -53,3 +53,11 @@ void get_fuzzy_time(struct tm* clock, char* buffer) {
 
     snprintf(buffer, MAX_MSG_SIZE, timestr, hourname);
 }
+
+int main(int argc, char const* argv[]) {
+    char msg[MAX_MSG_SIZE];
+    time_t now = time(NULL);
+    get_fuzzy_time(localtime(&now), msg);
+    printf("%s\n", msg);
+    return 0;
+}
